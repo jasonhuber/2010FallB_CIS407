@@ -1,0 +1,22 @@
+products
+	productid
+	description
+	price
+	QOH
+	imageurl
+	
+users
+	username
+	password
+	firstname
+	lastname
+	email
+	
+order
+	orderid
+	orderdate
+	
+orderitems
+	orderid
+	productid
+	quantity
