@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -27,7 +28,9 @@ public partial class _Default : System.Web.UI.Page
 
     public bool invalidateUsername(string s)
     {
-        bool bad = false;
+
+        return !Regex.IsMatch(s, @"[A-Za-z0-9_.]");
+/*        bool bad = false;
         int n = 0;
         while (n < s.Length && !bad)
         {
@@ -82,6 +85,7 @@ public partial class _Default : System.Web.UI.Page
             }
             n++;
         }
-        return bad;
+        return bad;*/
+
     }
 }
