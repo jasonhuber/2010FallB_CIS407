@@ -13,6 +13,7 @@
         Password: <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox><br />
         <asp:Button ID="cmdLogon" runat="server" Text="Logon" 
             onclick="cmdLogon_Click" />    
+            <asp:Label ID="lblError" runat="server" Visible="false"></asp:Label>
     </div>
     </form>
 </body>

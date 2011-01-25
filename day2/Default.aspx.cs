@@ -14,22 +14,30 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void cmdLogon_Click(object sender, EventArgs e)
     {
-        if (!invalidateUsername(txtUsername.Text))
+        if (validateUsername(txtUsername.Text))
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            string sql = "select firstname, lastname from [users] where [username] = '" + username + "'";
+            string sql = "select firstname, lastname from [users] where [username] = ? ";
             sql += " and [password] = '" + password + "'";
+            lblError.Visible = false;
+
+        }
+        else
+        {
+            lblError.Text = "Either your username or password was incorrect!";
+            lblError.Visible = true;
+            lblError.ForeColor = System.Drawing.Color.Red;
         }
     }
 
     //valid username characters:
     //aA1_.
 
-    public bool invalidateUsername(string s)
+    public bool validateUsername(string s)
     {
 
-        return !Regex.IsMatch(s, @"[A-Za-z0-9_.]");
+        return Regex.IsMatch(s, @"[A-Za-z0-9_.]");
 /*        bool bad = false;
         int n = 0;
         while (n < s.Length && !bad)
@@ -85,7 +93,7 @@ public partial class _Default : System.Web.UI.Page
             }
             n++;
         }
-        return bad;*/
+        return !bad;*/
 
     }
 }
