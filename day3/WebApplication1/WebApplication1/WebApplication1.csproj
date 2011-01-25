@@ -57,6 +57,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="App_Data\products.mdb" />
     <Content Include="InsertPerson.aspx" />
+    <Content Include="ReadData.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -125,6 +126,13 @@
       <DependentUpon>InsertPerson.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadData.aspx.cs">
+      <DependentUpon>ReadData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReadData.aspx.designer.cs">
+      <DependentUpon>ReadData.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
